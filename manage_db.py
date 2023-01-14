@@ -2,25 +2,28 @@ from psycopg2 import Error
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 from logger import write_to_servlog, write_to_errlog
+from connection import connect_to_db, disconnect_from_db
 
 
-def create_db(connection, db_name):
+def db_ddl(db_name, action):
+    connection = connect_to_db(user=db_name, password=db_name)
     try:
         connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         cursor = connection.cursor()
-        create_db_query = "CREATE DATABASE {}".format(db_name)
-        cursor.execute(create_db_query)
-        write_to_servlog(connection, "CREATED_DB")
+        db_ddl_query = "{} DATABASE {}".format(action, db_name)
+        cursor.execute(db_ddl_query)
+        write_to_servlog(db_name, db_name, f"{action}_DB")
     except (Exception, Error) as error:
         write_to_errlog(error)
+    disconnect_from_db(connection)
 
 
-def delete_db(connection, db_name):
+def db_dml(db_name, query):
+    connection = connect_to_db(user=db_name, password=db_name, db_name=db_name)
+    cursor = connection.cursor()
     try:
-        connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-        cursor = connection.cursor()
-        delete_db_query = "DROP DATABASE {}".format(db_name)
-        cursor.execute(delete_db_query)
-        write_to_servlog(connection, "DELETED_DB")
+        cursor.execute(query)
+        connection.commit()
     except (Exception, Error) as error:
         write_to_errlog(error)
+    disconnect_from_db(connection)

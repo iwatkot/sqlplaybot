@@ -13,9 +13,7 @@ with open(SYS_MESSAGE_FILE) as smf:
     SYS_MESSAGES = json.load(smf)
 
 
-def write_to_servlog(connection, event):
-    user = connection.get_dsn_parameters()['user']
-    db_name = connection.get_dsn_parameters()['dbname']
+def write_to_servlog(user, db_name, event):
     logging.info(SYS_MESSAGES[event].format(user, db_name))
 
 

@@ -1,6 +1,9 @@
 {
     "CONNECTED": "User [{}] successfully connected to database [{}].",
     "DISCONNECTING": "User [{}] is disconnecting from database [{}].",
-    "CREATED_DB": "User [{}] created database [{}] on the server.",
-    "DELETED_DB": "User [{}] deleted database [{}] on the server."
+    "CREATE_DB": "User [{}] created database [{}] on the server.",
+    "DROP_DB": "User [{}] deleted database [{}] on the server.",
+    "CREATE_USER": "User [{}] created user [{}] on the server.",
+    "DROP_USER": "User [{}] deleted user [{}] from the server.",
+    "ALTER_USER": "User [{}] changed user [{}] permissions."
 }
