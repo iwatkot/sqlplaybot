@@ -1,6 +1,6 @@
 {
-    "CONNECTED": "User [{}] successfully connected to the PostgreSQL server.",
-    "DISCONNECTING": "User [{}] is disconnecting from the PostgreSQL server now.",
-    "CREATED_DB": "User [{}] created database on the server",
-    "DELETED_DB": "User [{}] deleted database on the server"
+    "CONNECTED": "User [{}] successfully connected to database [{}].",
+    "DISCONNECTING": "User [{}] is disconnecting from database [{}].",
+    "CREATED_DB": "User [{}] created database [{}] on the server.",
+    "DELETED_DB": "User [{}] deleted database [{}] on the server."
 }

@@ -17,6 +17,7 @@ def create_db(connection, db_name):
 
 def delete_db(connection, db_name):
     try:
+        connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         cursor = connection.cursor()
         delete_db_query = "DROP DATABASE {}".format(db_name)
         cursor.execute(delete_db_query)

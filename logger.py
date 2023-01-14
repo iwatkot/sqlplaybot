@@ -15,7 +15,8 @@ with open(SYS_MESSAGE_FILE) as smf:
 
 def write_to_servlog(connection, event):
     user = connection.get_dsn_parameters()['user']
-    logging.info(SYS_MESSAGES[event].format(user))
+    db_name = connection.get_dsn_parameters()['dbname']
+    logging.info(SYS_MESSAGES[event].format(user, db_name))
 
 
 def write_to_errlog(error):
