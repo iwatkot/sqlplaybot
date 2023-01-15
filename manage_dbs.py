@@ -30,11 +30,10 @@ def execute_query(uid, query):
         cursor.execute(query)
         connection.commit()
         write_to_servlog("QUERY_EXECUTED", uid, uid)
-        if "SELECT" in query:
-            write_to_servlog("RETURNED_TO_USER", uid)
-            return cursor.fetchall()
+        return cursor.fetchall()
     except (Exception, Error) as error:
-        write_to_errlog(error)
-        return error
+        if str(error) != 'no results to fetch':
+            write_to_errlog(error)
+            return error
     finally:
         disconnect_from_db(connection)

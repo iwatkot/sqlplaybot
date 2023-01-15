@@ -64,6 +64,15 @@ async def random_handler(message: types.Message):
             parse_mode='MarkdownV2')
 
 
+@dp.message_handler(commands=["bugreport"])
+async def bugreport_handler(message: types.Message):
+    # Handles the '/start' command.
+    tg_id, uid, lang, user_name = unpack_message(message)
+    await message.reply(
+        USER_MESSAGES[lang][message.text].format(user_name),
+        parse_mode='MarkdownV2')
+
+
 @dp.message_handler()
 async def message_handler(message: types.Message):
     # Handles messages which not contain any command.
