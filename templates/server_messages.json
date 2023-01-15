@@ -1,0 +1,14 @@
+{
+    "CONNECTED": "User [{}] successfully connected to database [{}].",
+    "DISCONNECTING": "User [{}] is disconnecting from database [{}].",
+    "CREATE_DB": "User [{}] created database [{}] on the server.",
+    "DROP_DB": "User [{}] deleted database [{}] on the server.",
+    "CREATE_USER": "User [{}] created user [{}] on the server.",
+    "DROP_USER": "User [{}] deleted user [{}] from the server.",
+    "ALTER_USER": "User [{}] changed user [{}] permissions.",
+    "QUERY_EXECUTED": "User [{}] successfully executed query in database [{}].",
+    "RETURNED_TO_USER": "User [{}] recieved result from the server.",
+    "NO_ACTIVE_CONNECTION": "Tried to disconnect, while have no active connection.",
+    "RANDOM_TABLE_CREATED": "User [{}] created random table in database [{}].",
+    "RANDOM_TABLE_FILLED": "User [{}] successfully filled random table in database [{}]."
+}

@@ -1,0 +1,20 @@
+{
+    "en": {
+        "/start": "Hello, {}! This bot can help you practice SQL requests right in Telegram! Right now the bot is preparing PostgreSQL database for you.",
+        "TOUR": "So that's short guide how you can use it:\nAfter the database will be created, the bot will expect that every message from you \\(excluding commands of course\\) is an SQL request\\. The bot will not correct any of your mistakes, each message goes straight into the database, no excuses\\.\n\nYou can use \\/help command for further information\\.",
+        "LETSGO": "Ok, that's enough talking\\. Your database is ready for you to mess it up\\.\n\n*Friendly reminder:* every message you send to the bot is an SQL request now\\.",
+        "HELP": "placeholder for help message",
+        "RELOADED": "The bot created a new database for you\\. You can start to work with it right now\\. Use the \\/help command to refresh your memory of how to use the bot\\.",
+        "CONNECTION_FAILED": "The connection to your database failed.\n\nThe bot probably deleted your database (yes, it's doing it from time to time). Use /reload or /start commands to recreate your database or fully restart the bot.",
+        "RANDOM": "Random table with name `{}` created successfully\\."
+    },
+    "ru": {
+        "/start": "Здравствуй, {}! С помощью этого бота ты можешь практиковаться в написании SQL запросов прямо в Telegram!",
+        "TOUR": "--no-russian-locale-yet-",
+        "LETSGO": "--no-russian-locale-yet-",
+        "HELP": "--no-russian-locale-yet-",
+        "RELOADED": "--no-russian-locale-yet-",
+        "CONNECTION_FAILED": "--no-russian-locale-yet-",
+        "RANDOM": "--no-russian-locale-yet-"
+    }
+}

@@ -1,21 +1,30 @@
 import logging
-import json
 import sys
+import os
 
-SYS_MESSAGE_FILE = 'templates/system.json'
+from templates_handler import message_templates
+
+SERVER_MESSAGES = message_templates('server')
+BOT_MESSAGES = message_templates('bot')
 LOG_FILE = 'logs/main_log.txt'
+
+try:
+    os.mkdir('./logs')
+except FileExistsError:
+    pass
 
 logging.basicConfig(level=logging.INFO, filename=LOG_FILE, filemode='a',
                     format="%(asctime)s %(levelname)s %(message)s")
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-with open(SYS_MESSAGE_FILE) as smf:
-    SYS_MESSAGES = json.load(smf)
 
-
-def write_to_servlog(user, db_name, event):
-    logging.info(SYS_MESSAGES[event].format(user, db_name))
+def write_to_servlog(event, *args):
+    logging.info(SERVER_MESSAGES[event].format(*args))
 
 
 def write_to_errlog(error):
     logging.error((str(error).replace('\n', '')))
+
+
+def write_to_botlog(*args):
+    logging.info(BOT_MESSAGES['COMMAND'].format(*args))

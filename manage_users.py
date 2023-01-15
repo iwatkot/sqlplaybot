@@ -1,37 +1,39 @@
-from psycopg2 import Error, sql
+from psycopg2 import Error
 
 from connection import connect_to_db, disconnect_from_db
 from logger import write_to_servlog, write_to_errlog
 
 
-def user_ddl(username, action):
+def manage_user(uid, action):
     connection = connect_to_db()
-    user = connection.get_dsn_parameters()['user']
+    admin_user = connection.get_dsn_parameters()['user']
     try:
         cursor = connection.cursor()
         if action == 'CREATE':
-            user_ddl_query = "{} USER {} WITH PASSWORD '{}'".format(
-                action, username, username)
+            manage_user_query = "{} USER {} WITH PASSWORD '{}'".format(
+                action, uid, uid)
         elif action == 'DROP':
-            user_ddl_query = '{} USER IF EXISTS {}'.format(
-                action, username)
-        cursor.execute(user_ddl_query)
+            manage_user_query = '{} USER IF EXISTS {}'.format(
+                action, uid)
+        cursor.execute(manage_user_query)
         connection.commit()
-        write_to_servlog(user, username, f"{action}_USER")
+        write_to_servlog(f"{action}_USER", admin_user, uid)
     except (Exception, Error) as error:
         write_to_errlog(error)
-    disconnect_from_db(connection)
+    finally:
+        disconnect_from_db(connection)
 
 
-def user_dml(username, action):
+def user_permissions(uid, action):
     connection = connect_to_db()
-    user = connection.get_dsn_parameters()['user']
+    admin_user = connection.get_dsn_parameters()['user']
     try:
         cursor = connection.cursor()
-        user_dml_query = '{} USER {} CREATEDB'.format(action, username)
-        cursor.execute(user_dml_query)
+        user_permissions_query = '{} USER {} CREATEDB'.format(action, uid)
+        cursor.execute(user_permissions_query)
         connection.commit()
-        write_to_servlog(user, username, f"{action}_USER")
+        write_to_servlog(f"{action}_USER", admin_user, uid)
     except (Exception, Error) as error:
         write_to_errlog(error)
-    disconnect_from_db(connection)
+    finally:
+        disconnect_from_db(connection)

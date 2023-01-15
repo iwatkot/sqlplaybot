@@ -1,0 +1,7 @@
+__pycache__/
+.git
+.venv
+/logs
+.gitignore
+LICENSE.md
+README.md

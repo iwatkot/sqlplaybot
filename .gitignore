@@ -3,4 +3,3 @@
 .env
 logs/
 __pycache__/
-main(TEST).py
