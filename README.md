@@ -41,6 +41,6 @@ Locales and all log templates are stored in the **templates** folder in JSON fil
 PROFIT!
 
 ## Changelog
-**2023/01/16** - Added README.md
+**2023/01/16** - Added README.md<br>
 **2023/01/16** - Added MD2 formatting for responses from DB<br>
 **2023/01/15** - Added `ru` locale
