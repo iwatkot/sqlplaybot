@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from decouple import config
 
 from logger import write_to_botlog
-from templates_handler import message_templates
+from templates_handler import message_templates, fetch_formatter
 from manage_users import manage_user, user_permissions
 from manage_dbs import manage_db, execute_query
 from generator import fill_table
@@ -82,7 +82,8 @@ async def message_handler(message: types.Message):
     if response_from_db == 'CONNECTION_FAILED':
         await bot.send_message(tg_id, USER_MESSAGES[lang][response_from_db])
     elif response_from_db:
-        await bot.send_message(tg_id, response_from_db)
+        await bot.send_message(
+            tg_id, fetch_formatter(response_from_db), parse_mode='MarkdownV2')
 
 
 def unpack_message(message):
