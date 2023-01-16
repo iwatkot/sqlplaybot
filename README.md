@@ -9,7 +9,7 @@ You don't need to bother you with setting up the server and database whenever yo
 
 The bot uses PostgreSQL and creating a unique user and a database whenever the telegram user starts the bot with `/start` command. After database is ready, the bot will expect that every message from the user is an SQL request. It will open a connection, execute query, fetch results and close the connection. If there will be any results to fetch, or if an error will raise, the bot will return it to the telegram user.<br>
 The bot has two locales: **EN** and **RU**. By default it will use English locale, unless the message from telegram user will be sent from a **ru** client.<br>
-Locales and all log templates are stored in the `templates` folder in JSON files.
+Locales and all log templates are stored in the **templates** folder in JSON files.
 
 ## Available commands
 
@@ -20,13 +20,13 @@ Locales and all log templates are stored in the `templates` folder in JSON files
 `/bugreport` - obviously for bugreport, but right now it needs a sane implementation
 
 ## Modules
-`connection.py` - uses `psycopg2` and `decouple`. Handles the connection to the database (creates connection and closing it).<br>
+`connection.py` - uses **psycopg2** and **decouple**. Handles the connection to the database (creates connection and closing it).<br>
 `logger.py` - handles logging from all modules.<br>
-`manage_dbs.py` - uses `psycopg2`. Handles creation and deleting databases from the server. Also handles the main bot function for executing queries on the server.<br>
-`manage_users.py` - uses `psycopg2`. Handles creating, deleting and changing the permissions of users.<br>
-`generator.py` - uses `psycopg2` and `random_word` for random table creation. **Badly needs a refactoring** or a complete rebuild due to it's awful state right now.<br>
+`manage_dbs.py` - uses **psycopg2**. Handles creation and deleting databases from the server. Also handles the main bot function for executing queries on the server.<br>
+`manage_users.py` - uses **psycopg2**. Handles creating, deleting and changing the permissions of users.<br>
+`generator.py` - uses **psycopg2** and **random_word** for random table creation. **Badly needs a refactoring** or a complete rebuild due to it's awful state right now.<br>
 `templates_handler.py` - needed for unpacking templates and formatting database responses.<br>
-`main.py` - uses `aiogram`, `asyncio` and `decouple`. The bot's main script, responsible for the behavior of the bot. Needs refactoring and standartization of functions due to the almost similar code.<br>
+`main.py` - uses **aiogram**, **asyncio** and **decouple**. The bot's main script, responsible for the behavior of the bot. Needs refactoring and standartization of functions due to the almost similar code.<br>
 
 ## To-Do
 
