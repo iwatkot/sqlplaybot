@@ -7,7 +7,9 @@
         "RELOADED": "The bot created a new database for you\\. You can start to work with it right now\\. Use the \\/help command to refresh your memory of how to use the bot\\.",
         "CONNECTION_FAILED": "The connection to your database failed.\n\nThe bot probably deleted your database (yes, it's doing it from time to time). Use /reload or /start commands to recreate your database or fully restart the bot.",
         "RANDOM": "Random table with name `{}` created successfully\\.",
-        "/bugreport": "{}, please report about the bug to the developer: @iwatkot\\."
+        "/bugreport": "{}, please explain the bug you encountered or use \\/cancel command to end this dialog\\.",
+        "/cancel": "Ok, the bug report was cancelled, now you can enter SQL commands again.",
+        "BUG_REPORTED": "{}, thanks for reporting the bug."
     },
     "ru": {
         "/start": "Здравствуй, {}! С помощью этого бота ты можешь практиковаться в написании SQL запросов прямо в Telegram!",
@@ -17,6 +19,8 @@
         "RELOADED": "Бот создал новую базу данных для вас\\. Вы можете начать с ней работать прямо сейчас\\. Используйте команду \\/help, чтобы освежить воспоминания о том, как работает бот\\.",
         "CONNECTION_FAILED": "Бот не смог подключиться к вашей базе данных.\n\n Скорее всего дело в том, что бот удалил вашу базу данных (да, он делает это время от времени). Используйте команды /reload или /start чтобы пересоздать базу данных или перезапустить бота.",
         "RANDOM": "Таблица со случайными данными создана под именем `{}`\\.",
-        "/bugreport": "{}, пожалуйста сообщите о баге, написав разработчику: @iwatkot\\."
+        "/bugreport": "{}, пожалуйста опишите ошибку, с которой вы столкнулись или используйте команду \\/cancel, чтобы закрыть этот диалог\\.",
+        "/cancel": "Сообщение об ошибке отменено, вы снова можете вводить SQL запросы.",
+        "BUG_REPORTED": "{}, спасибо, что сообщили об ошибке."
     }
 }

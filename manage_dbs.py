@@ -30,7 +30,9 @@ def execute_query(uid, query):
         cursor.execute(query)
         connection.commit()
         write_to_servlog("QUERY_EXECUTED", uid, uid)
-        return cursor.fetchall()
+        fetch = cursor.fetchall()
+        print(fetch)
+        return fetch
     except (Exception, Error) as error:
         if str(error) != 'no results to fetch':
             write_to_errlog(error)

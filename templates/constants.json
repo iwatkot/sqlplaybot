@@ -1,0 +1,23 @@
+{
+    "generator": {
+        "ROWS": [2, 10],
+        "COLUMNS": [2, 10],
+        "RAND_LIMITS": [-1000, 1000],
+        "DATA_TYPES": [
+            "VARCHAR",
+            "TEXT",
+            "INT",
+            "REAL"
+        ],
+        "FIRST_COLUMN_PREFIX": "id SERIAL PRIMARY KEY NOT NULL",
+        "CREATE_QUERY_TEMPLATE": "CREATE TABLE {} ({});",
+        "INSERT_QUERY_TEMPLATE": "INSERT INTO {} ({}) VALUES ({});",
+        "FIRST_COLUMN_NAME": "id",
+        "FIRST_COLUMN_TYPE": "SERIAL",
+        "FIRST_VALUE": "DEFAULT"
+    },
+    "files": {
+        "LOG_FILE": "logs/main_log.txt",
+        "BUGREPORTS_FILE": "logs/bug_reports.txt"
+    }
+}

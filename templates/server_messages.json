@@ -10,5 +10,6 @@
     "RETURNED_TO_USER": "User [{}] recieved result from the server.",
     "NO_ACTIVE_CONNECTION": "Tried to disconnect, while have no active connection.",
     "RANDOM_TABLE_CREATED": "User [{}] created random table in database [{}].",
-    "RANDOM_TABLE_FILLED": "User [{}] successfully filled random table in database [{}]."
+    "RANDOM_TABLE_FILLED": "User [{}] successfully filled random table in database [{}].",
+    "BUG_REPORTED": "User [{}] reported about bug: [{}]."
 }
