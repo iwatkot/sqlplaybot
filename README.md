@@ -11,5 +11,5 @@ PROFIT!
 
 
 ## Changelog
-**2023/01/16** - Added MD2 formatting for responses from DB
+**2023/01/16** - Added MD2 formatting for responses from DB<br>
 **2023/01/15** - Added `ru` locale
