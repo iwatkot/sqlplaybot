@@ -28,18 +28,6 @@ Locales and all log templates are stored in the **templates** folder in JSON fil
 `templates_handler.py` - needed for unpacking templates and formatting database responses.<br>
 `main.py` - uses **aiogram**, **asyncio** and **decouple**. The bot's main script, responsible for the behavior of the bot.
 
-## To-Do
-
-1. Tests (in work).<br>
-2. *done*<br>
-3. *done*<br>
-4. Scheduled auto-clear.<br>
-5. Admin commands.<br>
-6. Limitations for users.<br>
-7. Blacklist for users.<br>
-???<br>
-PROFIT!
-
 ## Changelog
 **2013/01/16** - added `constants.json` file to store constant values.
 **2023/01/16** - `generator.py` refactored<br>
